@@ -1,0 +1,23 @@
+{
+  "name": "fullstack_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd backend && node server.js\" \"cd my-app && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-94/mern_stack_boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dev-94/mern_stack_boilerplate/issues"
+  },
+  "homepage": "https://github.com/Dev-94/mern_stack_boilerplate#readme",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
