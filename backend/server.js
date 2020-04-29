@@ -6,13 +6,15 @@ const logger = require('morgan')
 const Data = require('./data')
 
 
+//MongoDB
+require('dotenv').config()
+const dbRoute = process.env.DB_SERVER
+
 const API_PORT = 3001
 const app = express()
 app.use(cors())
 const router = express.Router()
 
-//MongoDB
-const dbRoute = 'mongodb://<your-db-username-here>:<your-db-password-here>@ds249583.mlab.com:49583/fullstack_app'
 
 // connects backend with DB
 mongoose.connect(dbRoute, { useNewUrlParser: true })
