@@ -49,14 +49,15 @@ router.post('/updateData', (req, res) => {
 
 // delete method, removes existing data in DB
 router.delete('/deleteData', (req, res) => {
-    const { id } = req.bodyData.findByIdAndRemove(id, (err)) => {
+    const { id } = req.body
+    Data.findByIdAndRemove(id, (err) => {
         if (err) return res.send(err)
         return res.json({ success: true })
-    }
+    })
 })
 
 // create method, adds new data to DB
-router.post('/putData', (res, res) => {
+router.post('/putData', (req, res) => {
     let data = new Data()
 
     const { id, message } = req.body
@@ -80,4 +81,3 @@ app.use('/api', router)
 
 // launch backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
-
