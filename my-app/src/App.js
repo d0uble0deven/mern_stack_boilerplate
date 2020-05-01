@@ -17,16 +17,21 @@ class App extends Component {
   // fetch existing data when component mounts
   // check if db has changed, implement changes
   componentDidMount() {
+    // get data when site opens
     this.getDataFromDb()
+    // if intervalIsSet is true  than run getData every second
     if (!this.state.intervalIsSet) {
       let interval = setInterval(this.getDataFromDb, 1000)
+      // also set intervalIsSet state to interval, truthy value
       this.setState({ intervalIsSet: interval })
     }
   }
 
   // kills process when user is finished
   componentWillUnmount() {
+    // if intervalIsSet has a truthy value, remove timer and make state falsey
     if (this.state.intervalIsSet) {
+      console.log('unmounting')
       clearInterval(this.state.intervalIsSet)
       this.setState({ intervalIsSet: null })
     }
