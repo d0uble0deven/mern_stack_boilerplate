@@ -57,9 +57,9 @@ class App extends Component {
   deleteFromDB = (idToDelete) => {
     parseInt(idToDelete)
     let objIdToDelete = null
-    this.state.data.forEach((dat) => {
-      if (dat.id == idToDelete) {
-        objIdToDelete = dat._id
+    this.state.data.forEach((item) => {
+      if (item.id == idToDelete) {
+        objIdToDelete = item._id
       }
     })
 
@@ -74,9 +74,9 @@ class App extends Component {
   updateDB = (idToUpdate, updateToApply) => {
     let objIdToUpdate = null
     parseInt(idToUpdate)
-    this.state.data.forEach((dat) => {
-      if (dat.id == idToUpdate) {
-        objIdToUpdate = dat._id
+    this.state.data.forEach((item) => {
+      if (item.id == idToUpdate) {
+        objIdToUpdate = item._id
       }
     })
 
